@@ -37,11 +37,6 @@ public class ImagePPM {
 			this.pixels = new pixel[this.height][this.width];
 			for (int i = 0; i < this.height; i++) {
 				for (int j = 0; j < this.width; j++) {
-					/*if (sc.hasNext("#")) {
-						//System.out.println("Hash found");
-						sc.nextLine();
-						sc.nextLine();
-					}*/
 					pixel dot = new pixel();
 					dot.r = sc.nextInt();
 					dot.g = sc.nextInt();
@@ -118,7 +113,6 @@ public class ImagePPM {
 	public void emboss() {
 		for (int i = this.height-1; i >= 0; i--) {
 			for (int j = this.width-1; j >= 0; j--) {
-				//System.out.println("i="+i+" j="+j);
 				if (j == 0 || i == 0) {
 					pixels[i][j].r = maxColor / 2 + 1;
 					pixels[i][j].g = maxColor / 2 + 1;
@@ -177,22 +171,6 @@ public class ImagePPM {
           pixels[i][j].g = avgG;
           pixels[i][j].b = avgB;
         } 
-//        System.out.println(avgR + " " + avgG + " " + avgB); 
-        /*int tmp = 0;
-				for (int k = 0; k < num-1; k++) {
-					if (j+num >= this.width) {
-						tmp++;
-					}
-					avgR += pixels[i][j+k-tmp].r;
-					avgG += pixels[i][j+k-tmp].g;
-					avgB += pixels[i][j+k-tmp].b;
-					
-				}
-				pixels[i][j].r = avgR/(num-tmp);
-				pixels[i][j].g = avgG/(num-tmp);
-				pixels[i][j].b = avgB/(num-tmp);
-
-        */
 			}
 		}
 	}

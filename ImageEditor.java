@@ -44,8 +44,6 @@ public class ImageEditor {
 				System.exit(-9);
 		}
 
-		//image.print();
-		
 		image.writeFile(outputFile);
 
 	}
